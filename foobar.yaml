@@ -1,0 +1,16 @@
+---
+- name: Foobar
+  hosts: all
+  become: true
+  tasks:
+    - name: Create a user
+      ansible.builtin.user:
+        name: foo
+        uid: 1001
+        group: foo
+    - name: Create a file
+      ansible.builtin.file:
+        path: /etc/foo.conf
+        owner: foo
+        group: foo
+        mode: '0644'
