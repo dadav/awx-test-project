@@ -3,7 +3,11 @@
   hosts: all
   become: true
   tasks:
-    - name: Create a user
+    - name: Create foo group
+      ansible.builtin.user:
+        name: foo
+        state: present
+    - name: Create foo user
       ansible.builtin.user:
         name: foo
         uid: 1001
