@@ -14,6 +14,7 @@
         group: foo
     - name: Create a file
       ansible.builtin.file:
+        state: touch
         path: /etc/foo.conf
         owner: foo
         group: foo
